@@ -20,7 +20,7 @@ const TermsAndPolicy = ({ navigation }) => {
   }
   return (
     <SafeAreaView style={safe_area_style.androidsafearea}>
-      <View style={{ paddingBottom: 65 }}>
+      <View style={{ paddingBottom: 70 }}>
         {/* navigation container */}
         <Pressable
           onPress={() => navigation.navigate("Home")}
@@ -161,58 +161,22 @@ const TermsAndPolicy = ({ navigation }) => {
               </Text>
             </View>
           </View>
-          {/* Refund Policy */}
-          <Text style={styles.header_txt}>Refund Policy</Text>
+          {/* Cancellation and Refund Policy */}
+          <Text style={styles.header_txt}>Cancellation and Refund Policy</Text>
           {/* content */}
           <View style={styles.content_container}>
             <Dot name="dot-single" size={40} style={{ marginTop: -10 }} />
             <Text style={styles.content}>
-              Users can cancel bookings up to 24 hours before the scheduled
-              appointment. Refunds will be processed within 7-10 business days.
+              Once a booking is confirmed through our app, it cannot be
+              canceled. We do not accept any requests for cancellations.
             </Text>
           </View>
 
           <View style={styles.content_container}>
             <Dot name="dot-single" size={40} style={{ marginTop: -10 }} />
             <Text style={styles.content}>
-              If a service provider cancels the appointment, users will receive
-              a full refund or an option to reschedule.
-            </Text>
-          </View>
-
-          <View style={styles.content_container}>
-            <Dot name="dot-single" size={40} style={{ marginTop: -10 }} />
-            <Text style={styles.content}>
-              Refunds are eligible for Cancellations made within the specified
-              time frame, Services not delivered as promised, and Technical
-              issues preventing the completion of the booking process.
-            </Text>
-          </View>
-
-          <View style={styles.content_container}>
-            <Dot name="dot-single" size={40} style={{ marginTop: -10 }} />
-            <Text style={styles.content}>
-              To request a refund, please contact our support team with your
-              booking details. Our team will review the request and process the
-              refund if eligible.
-            </Text>
-          </View>
-
-          <View style={styles.content_container}>
-            <Dot name="dot-single" size={40} style={{ marginTop: -10 }} />
-            <Text style={styles.content}>
-              Non-refundable situations are for Cancellations made less than 24
-              hours before the appointment, No-shows, or missed appointments
-              without prior notice.
-            </Text>
-          </View>
-
-          <View style={styles.content_container}>
-            <Dot name="dot-single" size={40} style={{ marginTop: -10 }} />
-            <Text style={styles.content}>
-              We reserve the right to modify this Refund Policy at any time.
-              Users will be notified of any changes, and continued use of the
-              app constitutes acceptance of the modified policy.
+              No refunds will be issued for any bookings once confirmed.
+              Payments made for services are non-refundable.
             </Text>
           </View>
         </ScrollView>

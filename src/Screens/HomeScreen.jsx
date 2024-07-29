@@ -31,7 +31,7 @@ const HomeScreen = () => {
           {/* carosel */}
           <CarouselComp />
 
-          {/* header banner */}
+          {/* header text banner */}
           <View style={{ marginHorizontal: 15, marginTop: 30 }}>
             <View style={styles.banner}>
               <Text style={styles.sub_txt}>

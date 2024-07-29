@@ -119,7 +119,7 @@ const OtherServiceBooking = () => {
             </Text>
             <TextInput style={styles.reason_text_input} multiline={true} />
           </View>
-          {/* Appointment */}
+          {/* Signature */}
           <View style={styles.sign_input_container}>
             <Text style={styles.label}>
               Signature<Text style={{ color: "red" }}>*</Text>

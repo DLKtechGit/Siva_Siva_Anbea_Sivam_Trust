@@ -121,7 +121,7 @@ const AstrologyForm = () => {
             />
           </View>
 
-          {/* Appointment */}
+          {/* Signature */}
           <View style={styles.sign_input_container}>
             <Text style={styles.label}>
               Signature<Text style={{ color: "red" }}>*</Text>

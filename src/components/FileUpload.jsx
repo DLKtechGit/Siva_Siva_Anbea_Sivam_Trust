@@ -20,13 +20,13 @@ const FileUpload = () => {
     let result = await DocumentPicker.getDocumentAsync({
       type: [
         "application/pdf",
-        "application/msword",        
+        "application/msword",
         "application/vnd.openxmlformats-officedocument.wordprocessingml.document",
-        "image/*"
+        "image/*",
       ],
     });
     console.log(result);
-    setfile(result)
+    setfile(result);
     // Alert.alert('File uploaded successfully')
   };
 
@@ -44,7 +44,7 @@ const styles = StyleSheet.create({
   img: {
     width: wp(15),
     height: hp(7),
-    opacity:0.5
+    opacity: 0.5,
   },
   img_container: {
     backgroundColor: COLORS.white,
@@ -60,6 +60,6 @@ const styles = StyleSheet.create({
   file_upload_txt: {
     fontWeight: "600",
     color: COLORS.dark_gray,
-    fontFamily:'medium-bold'
+    fontFamily: "medium-bold",
   },
 });

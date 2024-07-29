@@ -18,14 +18,12 @@ import {
 } from "react-native-responsive-screen";
 import { CustomFonts } from "../components/CustomFonts";
 
-
 const ForgetPasswordScreen = ({ navigation }) => {
-
   const loadedfonts = CustomFonts();
-  if(!loadedfonts){
-    return(null)
+  if (!loadedfonts) {
+    return null;
   }
-  
+
   return (
     <SafeAreaView style={safe_area_style.androidsafearea}>
       {/* main container */}
@@ -52,7 +50,6 @@ const ForgetPasswordScreen = ({ navigation }) => {
           <TouchableOpacity style={styles.btn_container}>
             <Text style={styles.btn_txt}>Verify</Text>
           </TouchableOpacity>
-          
         </View>
       </View>
     </SafeAreaView>
@@ -108,15 +105,4 @@ const styles = StyleSheet.create({
     color: COLORS.white,
     fontFamily: "semi-bold",
   },
-  //   img:{
-  //     width:wp(70),
-  //     height:hp(30),
-  //     opacity:0.1
-  //   },
-  //   img_container:{
-  //     display:'flex',
-  //     alignItems:'center',
-  //     justifyContent:'center',
-  //     marginTop:hp(16)
-  //   }
 });

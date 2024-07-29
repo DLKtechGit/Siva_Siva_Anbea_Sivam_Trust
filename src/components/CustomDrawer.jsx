@@ -17,8 +17,6 @@ import {
 } from "react-native-responsive-screen";
 import { COLORS } from "./constants";
 import { TouchableOpacity } from "react-native-gesture-handler";
-import Fontawesome from "react-native-vector-icons/FontAwesome";
-import Icon2 from "react-native-vector-icons/FontAwesome6";
 import { useNavigation } from "@react-navigation/native";
 
 const CustomDrawer = (props) => {
@@ -54,51 +52,53 @@ const CustomDrawer = (props) => {
               <Text style={styles.user_email}>tommy89@gmail.com</Text>
             </View>
           </View>
-          {/* edit profile icon */}
-          {/* <TouchableOpacity
-            style={{ position: "absolute", top: 0, right: 10, marginTop: -40 }}
-          >
-            <Image
-              source={require("../Assets/edit-icon.png")}
-              style={styles.edit_icon}
-            />
-          </TouchableOpacity> */}
 
           <View style={{ paddingTop: 20 }}>
             <DrawerItemList {...props} />
           </View>
 
-          {/* social icons */}
+          {/* social icons container */}
           <View style={styles.social_icons_container}>
+            {/* FB */}
             <TouchableOpacity
               onPress={() => {
                 Linking.openURL("https://www.facebook.com/");
               }}
             >
-              {/* <Fontawesome name="facebook-square" size={25} /> */}
               <Image
                 source={require("../Assets/fb.png")}
                 style={styles.social_icons}
               />
             </TouchableOpacity>
+
+            {/* insta */}
             <TouchableOpacity>
-              {/* <Icon2 name="square-x-twitter" size={25} /> */}
               <Image
                 source={require("../Assets/insta.png")}
                 style={styles.social_icons}
               />
             </TouchableOpacity>
+
+            {/* X */}
             <TouchableOpacity>
-              {/* <Icon2 name="square-instagram" size={25} /> */}
               <Image
                 source={require("../Assets/x.png")}
                 style={styles.social_icons}
               />
             </TouchableOpacity>
+
+            {/* Whatsapp */}
             <TouchableOpacity>
-              {/* <Icon2 name="linkedin" size={25} /> */}
               <Image
-                source={require("../Assets/linkedin.png")}
+                source={require("../Assets/whatsapp.png")}
+                style={styles.social_icons}
+              />
+            </TouchableOpacity>
+
+            {/* Youtube */}
+            <TouchableOpacity>
+              <Image
+                source={require("../Assets/youtube.png")}
                 style={styles.social_icons}
               />
             </TouchableOpacity>
@@ -163,7 +163,7 @@ const styles = StyleSheet.create({
   social_icons_container: {
     display: "flex",
     flexDirection: "row",
-    gap: 20,
+    gap: 15,
     marginTop: 10,
     paddingHorizontal: 20,
   },

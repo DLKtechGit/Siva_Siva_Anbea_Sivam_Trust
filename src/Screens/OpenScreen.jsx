@@ -12,11 +12,11 @@ import {
   widthPercentageToDP as wp,
 } from "react-native-responsive-screen";
 import { COLORS } from "../components/constants";
-import {CustomFonts} from "../components/CustomFonts"
+import { CustomFonts } from "../components/CustomFonts";
 const OpenScreen = ({ navigation }) => {
   const loadedfonts = CustomFonts();
-  if(!loadedfonts){
-    return(null)
+  if (!loadedfonts) {
+    return null;
   }
   return (
     <ImageBackground

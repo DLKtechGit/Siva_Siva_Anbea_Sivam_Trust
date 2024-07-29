@@ -74,7 +74,6 @@ const SupportScreen = () => {
   const renderItem = ({ item }) => (
     <View style={{ marginBottom: 15 }}>
       <View style={{ flexDirection: item.sent ? "row-reverse" : "row" }}>
-        {/* {!item.sent && <Image source={require('../../assets/images/AnbeSiva.png')} style={styles.logo} />} */}
         <Message
           name="chatbubble-ellipses"
           style={{ marginRight: 5 }}

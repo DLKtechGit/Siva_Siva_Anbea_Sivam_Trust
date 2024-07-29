@@ -9,7 +9,7 @@ import {
   ScrollView,
   ImageBackground,
 } from "react-native";
-import React, {useState} from "react";
+import React, { useState } from "react";
 import {
   widthPercentageToDP as wp,
   heightPercentageToDP as hp,
@@ -17,16 +17,16 @@ import {
 import Icon from "react-native-vector-icons/AntDesign";
 import Icon2 from "react-native-vector-icons/Feather";
 import { COLORS } from "../components/constants";
-import {CustomFonts} from "../components/CustomFonts"
+import { CustomFonts } from "../components/CustomFonts";
 
-const LoginScreen = ({ navigation }) => {  
-  const [showpassword, setshowpassword] =useState(false); 
-  
+const LoginScreen = ({ navigation }) => {
+  const [showpassword, setshowpassword] = useState(false);
+
   const loadedfonts = CustomFonts();
-  if(!loadedfonts){
-    return(null)
+  if (!loadedfonts) {
+    return null;
   }
- 
+
   return (
     <ImageBackground
       source={require("../Assets/floral-bg.jpg")}
@@ -124,14 +124,14 @@ const styles = StyleSheet.create({
     marginTop: hp(4),
   },
   main_txt: {
-    fontSize: wp(10),   
+    fontSize: wp(10),
     color: COLORS.secondary,
-    fontFamily:'semi-bold'
+    fontFamily: "semi-bold",
   },
   sub_txt: {
-    fontSize: 16,    
+    fontSize: 16,
     color: COLORS.dark_gray,
-    fontFamily:'medium-bold',    
+    fontFamily: "medium-bold",
   },
   txt_container: {
     display: "flex",
@@ -149,9 +149,9 @@ const styles = StyleSheet.create({
     paddingVertical: 20,
   },
   placeholderstyle: {
-    fontSize: 16,    
+    fontSize: 16,
     width: "90%",
-    fontFamily:'regular'
+    fontFamily: "regular",
   },
   input_field: {
     display: "flex",
@@ -170,9 +170,9 @@ const styles = StyleSheet.create({
     gap: hp(5),
   },
   forget_password_txt: {
-    fontSize: 15,    
+    fontSize: 15,
     color: COLORS.secondary,
-    fontFamily:'semi-bold'
+    fontFamily: "semi-bold",
   },
   forget_btn_container: {
     marginVertical: 10,
@@ -187,7 +187,7 @@ const styles = StyleSheet.create({
   btn_txt: {
     textAlign: "center",
     fontSize: 18,
-   fontFamily:'semi-bold',
+    fontFamily: "semi-bold",
     color: COLORS.primary,
   },
   main_btn_container: {

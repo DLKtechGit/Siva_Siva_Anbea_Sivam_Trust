@@ -22,11 +22,10 @@ const MyBookingsScreen = () => {
           fontFamily: "semi-bold",
           width: 150,
           textTransform: "none",
-          paddingVertical:2,         
+          paddingVertical: 2,
         },
-        tabBarIndicatorStyle:{backgroundColor:COLORS.primary}
+        tabBarIndicatorStyle: { backgroundColor: COLORS.primary },
       }}
-      
     >
       <Tab.Screen name="Upcoming" component={UpcomingBookings} />
       <Tab.Screen name="Past" component={PastBooking} />

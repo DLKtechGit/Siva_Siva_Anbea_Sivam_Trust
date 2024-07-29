@@ -18,8 +18,6 @@ const appointments = [
     id: "1",
     doctor: "Dr. Jennifer",
     specialization: "Dermatologists",
-    // address:
-    //   "474A/170 Bramh Nagar 2nd Daliganj Railway Crossing, Sitapur Rd, Lucknow, U.P.",
     date: "Jul 6, 2024",
     time: "10:00 AM",
     status: "Confirmed",
@@ -30,8 +28,6 @@ const appointments = [
     id: "2",
     doctor: "Dr. Asogan",
     specialization: "Cardiologists",
-    // address:
-    //   "474A/170 Bramh Nagar 2nd Daliganj Railway Crossing, Sitapur Rd, Lucknow, U.P.",
     date: "Jul 4, 2024",
     time: "3:00 PM",
     status: "Confirmed",
@@ -45,9 +41,6 @@ const AppointmentCard = ({ appointment }) => {
   return (
     <View style={styles.card}>
       <View style={styles.cardHeader}>
-        {/* <Text style={styles.appointmentFor}>
-              Appointment for <Text style={styles.boldText}>Self</Text>
-            </Text> */}
         <Text style={styles.status}>{appointment.status}</Text>
       </View>
       <View style={styles.cardBody}>
@@ -57,7 +50,6 @@ const AppointmentCard = ({ appointment }) => {
           <Text style={styles.specialization}>
             {appointment.specialization}
           </Text>
-          {/* <Text style={styles.address}>{appointment.address}</Text> */}
           <Text style={styles.boldText}>Paid ₹{appointment.paid}</Text>
         </View>
         <View style={styles.timeContainer}>
