@@ -1,4 +1,4 @@
-import { StyleSheet, Text, View, Pressable, TextInput } from "react-native";
+import { StyleSheet, Text, View, Pressable, TextInput, TouchableOpacity } from "react-native";
 import React from "react";
 import { COLORS } from "../../components/constants";
 import Icon from "react-native-vector-icons/AntDesign";
@@ -38,44 +38,12 @@ const OtherServiceBooking = () => {
         <View style={styles.main_input_container}>
           {/* header text */}
           <Text style={styles.header_txt}>Appointment Request Form</Text>
-          {/* Reason for appointment */}
-          <View style={styles.input_container}>
-            <Text style={styles.label}>
-              Reason For Seeing<Text style={{ color: "red" }}>*</Text>
-            </Text>
-            <TextInput style={styles.text_input} />
-          </View>
           {/* name field */}
           <View style={styles.input_container}>
             <Text style={styles.label}>
               Name<Text style={{ color: "red" }}>*</Text>
             </Text>
             <TextInput style={styles.text_input} placeholder="Enter Name" />
-          </View>
-          {/* DOB field */}
-          <View style={styles.input_container}>
-            <Text style={styles.label}>
-              Birth Date<Text style={{ color: "red" }}>*</Text>
-            </Text>
-            <DOBpicker />
-          </View>
-          {/* Gender field */}
-          <View style={styles.input_container}>
-            <Text style={styles.label}>
-              Gender<Text style={{ color: "red" }}>*</Text>
-            </Text>
-            <GenderToggle />
-          </View>
-          {/* contact number */}
-          <View style={styles.input_container}>
-            <Text style={styles.label}>
-              Contact Number<Text style={{ color: "red" }}>*</Text>
-            </Text>
-            <TextInput
-              style={styles.text_input}
-              placeholder="+91 00000 00000"
-              keyboardType="numeric"
-            />
           </View>
           {/* Email field */}
           <View style={styles.input_container}>
@@ -88,46 +56,58 @@ const OtherServiceBooking = () => {
               placeholder="example@gmail.com"
             />
           </View>
-          {/* Address field */}
+          {/* contact number */}
           <View style={styles.input_container}>
             <Text style={styles.label}>
-              Address<Text style={{ color: "red" }}>*</Text>
+              Contact Number<Text style={{ color: "red" }}>*</Text>
             </Text>
-            <TextInput style={styles.text_input} multiline={true} />
+            <TextInput
+              style={styles.text_input}
+              placeholder="+91 00000 00000"
+              keyboardType="numeric"
+            />
+          </View>
+          {/* Age */}
+          <View style={styles.input_container}>
+            <Text style={styles.label}>
+              Age<Text style={{ color: "red" }}>*</Text>
+            </Text>
+            <TextInput
+              style={styles.text_input}
+              placeholder="Enter Age"
+              keyboardType="numeric"
+            />
+          </View>
+          {/* Gender field */}
+          <View style={styles.input_container}>
+            <Text style={styles.label}>
+              Gender<Text style={{ color: "red" }}>*</Text>
+            </Text>
+            <GenderToggle />
+          </View>
+          {/* Reason for appointment */}
+          <View style={styles.input_container}>
+            <Text style={styles.label}>
+              Reason For Seeing<Text style={{ color: "red" }}>*</Text>
+            </Text>
+            <TextInput style={styles.text_input} />
           </View>
 
-          {/*Medical Report file upload */}
-          <View style={styles.input_container}>
-            <Text style={styles.label}>
-              Upload Medical Report (if applicable)
-            </Text>
-            <FileUpload />
-          </View>
-          {/* Date time selection */}
-          <View style={styles.input_container}>
-            <Text style={styles.label}>
-              What date and time work best for you
-              <Text style={{ color: "red" }}>*</Text>
-            </Text>
-            <DatePicker />
-          </View>
           {/* Reason */}
           <View style={styles.input_container}>
             <Text style={styles.label}>
-              Explain Your problem in few lines of your appointment
+             Ask your question
               <Text style={{ color: "red" }}>*</Text>
             </Text>
             <TextInput style={styles.reason_text_input} multiline={true} />
           </View>
-          {/* Signature */}
-          <View style={styles.sign_input_container}>
-            <Text style={styles.label}>
-              Signature<Text style={{ color: "red" }}>*</Text>
+
+          {/* Submit button */}
+          <TouchableOpacity style={styles.btn_container}>
+            <Text style={styles.btn_txt}>
+              Submit
             </Text>
-            <Signature />
-          </View>
-          {/* payment field */}
-          <Payment2 />
+          </TouchableOpacity>
         </View>
       </ScrollView>
     </View>
@@ -210,4 +190,16 @@ const styles = StyleSheet.create({
     fontFamily: "medium-bold",
     color: COLORS.dark_gray,
   },
+  btn_container:{
+    backgroundColor:COLORS.primary,
+    padding:10,
+    marginBottom:20,
+    borderRadius:7
+  },
+  btn_txt:{
+    fontSize:16,
+    textAlign:'center',
+    fontFamily:'semi-bold',
+    color:COLORS.white
+  }
 });

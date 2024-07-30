@@ -82,7 +82,7 @@ const ServiceSelection = () => {
           {/* Astrology */}
           <Pressable
             style={styles.service_container}
-            onPress={() => navigation.navigate("Astrologyform")}
+            onPress={() => navigation.navigate("Astrology")}
           >
             <View style={styles.icon_container}>
               <Image

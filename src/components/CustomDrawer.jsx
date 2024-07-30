@@ -62,7 +62,7 @@ const CustomDrawer = (props) => {
             {/* FB */}
             <TouchableOpacity
               onPress={() => {
-                Linking.openURL("https://www.facebook.com/");
+                Linking.openURL("https://www.facebook.com/sivasivaambaesivam/");
               }}
             >
               <Image
@@ -72,7 +72,13 @@ const CustomDrawer = (props) => {
             </TouchableOpacity>
 
             {/* insta */}
-            <TouchableOpacity>
+            <TouchableOpacity
+              onPress={() => {
+                Linking.openURL(
+                  "https://www.instagram.com/siva_sivaanbaesivam_offical?igsh=NXBhYjk0YXhsaDE1"
+                );
+              }}
+            >
               <Image
                 source={require("../Assets/insta.png")}
                 style={styles.social_icons}
@@ -80,7 +86,13 @@ const CustomDrawer = (props) => {
             </TouchableOpacity>
 
             {/* X */}
-            <TouchableOpacity>
+            <TouchableOpacity
+              onPress={() => {
+                Linking.openURL(
+                  "https://twitter.com/sivaanbe1?t=kTE-0N2y-I9fwfQrx1rECw&s=09"
+                );
+              }}
+            >
               <Image
                 source={require("../Assets/x.png")}
                 style={styles.social_icons}
@@ -95,10 +107,42 @@ const CustomDrawer = (props) => {
               />
             </TouchableOpacity>
 
+            {/* telegram */}
+            <TouchableOpacity
+              onPress={() => {
+                Linking.openURL("https://t.me/sivasivaambaesiva");
+              }}
+            >
+              <Image
+                source={require("../Assets/telegram.png")}
+                style={styles.social_icons}
+              />
+            </TouchableOpacity>
+
             {/* Youtube */}
-            <TouchableOpacity>
+            <TouchableOpacity
+              onPress={() => {
+                Linking.openURL(
+                  "https://youtube.com/@sivasivaanbaesivamoffical"
+                );
+              }}
+            >
               <Image
                 source={require("../Assets/youtube.png")}
+                style={styles.social_icons}
+              />
+            </TouchableOpacity>
+
+            {/* web */}
+            <TouchableOpacity
+              onPress={() => {
+                Linking.openURL(
+                  "https://www.sivasivaanbaesivam.com"
+                );
+              }}
+            >
+              <Image
+                source={require("../Assets/web.png")}
                 style={styles.social_icons}
               />
             </TouchableOpacity>

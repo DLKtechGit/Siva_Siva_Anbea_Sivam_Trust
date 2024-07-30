@@ -8,6 +8,7 @@ import {
   TouchableOpacity,
   ScrollView,
   ImageBackground,
+  Dimensions,
 } from "react-native";
 import React, { useState } from "react";
 import {
@@ -118,7 +119,8 @@ const styles = StyleSheet.create({
     padding: 15,
     display: "flex",
     flexDirection: "column",
-    paddingBottom: 50,
+    // paddingBottom: 50,
+    flex: 1,
   },
   icon_container: {
     marginTop: hp(4),

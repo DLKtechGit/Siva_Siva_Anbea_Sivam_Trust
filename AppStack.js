@@ -48,9 +48,7 @@ const AppStack = () => {
         <stack.Screen name="Meditation" component={MeditationScreen} />
         <stack.Screen name="Booking" component={DrBookingForm} />
         <stack.Screen name="OtherBooking" component={OthersBookingForm} />
-        <stack.Screen
-          name="OtherServiceBooking"
-          component={OtherServiceBooking}
+        <stack.Screen name="OtherServiceBooking"component={OtherServiceBooking}
         />
         <stack.Screen name="Astrologyform" component={AstrologyForm} />
         <stack.Screen name="Change_password" component={ChangePasswordScreen} />

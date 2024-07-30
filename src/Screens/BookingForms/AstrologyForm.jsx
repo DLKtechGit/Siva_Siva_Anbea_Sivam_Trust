@@ -16,6 +16,7 @@ import Signature from "../../components/Signature";
 import DatePicker from "../../components/DatePicker";
 import Payment2 from "../../components/Payment2";
 import TimeSelection from "../../components/TimeSelection";
+import HoroscopeToggle from "../../components/HoroscopeToggle";
 
 const AstrologyForm = () => {
   const navigation = useNavigation();
@@ -120,7 +121,13 @@ const AstrologyForm = () => {
               placeholder="Town / City, State, Country"
             />
           </View>
-
+          {/* Do you have horoscope */}
+          <View style={styles.input_container}>
+            <Text style={styles.label}>
+              Do you have horoscope<Text style={{ color: "red" }}>*</Text>
+            </Text>
+            <HoroscopeToggle />
+          </View>
           {/* Signature */}
           <View style={styles.sign_input_container}>
             <Text style={styles.label}>
