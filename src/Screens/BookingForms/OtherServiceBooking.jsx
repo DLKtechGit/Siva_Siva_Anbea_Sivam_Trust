@@ -31,7 +31,7 @@ const OtherServiceBooking = () => {
         <Pressable onPress={() => navigation.navigate("Home")}>
           <Icon name="arrowleft" size={25} color={COLORS.white} />
         </Pressable>
-        <Text style={styles.nav_txt}>Other services booking</Text>
+        <Text style={styles.nav_txt}>General questions form</Text>
       </View>
       {/* main input container */}
       <ScrollView showsVerticalScrollIndicator={false}>

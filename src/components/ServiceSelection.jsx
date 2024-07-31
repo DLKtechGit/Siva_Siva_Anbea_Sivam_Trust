@@ -118,7 +118,7 @@ const ServiceSelection = () => {
                 style={styles.icons}
               />
             </View>
-            <Text style={styles.service_name}>Others</Text>
+            <Text style={styles.service_name}>General Questions</Text>
           </Pressable>
         </View>
       </View>
