@@ -142,7 +142,7 @@ const styles = StyleSheet.create({
   },
   img: {
     width: "100%",
-    height: hp(30),
+    height: 250,
   },
   img_container: {
     display: "flex",
@@ -195,7 +195,7 @@ const styles = StyleSheet.create({
   main_btn_container: {
     display: "flex",
     flexDirection: "column",
-    gap: hp(3),
-    marginVertical: hp(3),
+    gap: hp(2),
+    marginTop: hp(2),
   },
 });

@@ -118,7 +118,10 @@ const ServiceSelection = () => {
                 style={styles.icons}
               />
             </View>
-            <Text style={styles.service_name}>General Questions</Text>
+            {/* <Text style={styles.service_name}>General questions</Text> */}
+            <View style={{ flexDirection: "row", }}>
+              <Text style={styles.service_name}> General Questions</Text>
+            </View>
           </Pressable>
         </View>
       </View>
@@ -143,20 +146,20 @@ const styles = StyleSheet.create({
     fontSize: 13,
   },
   icons: {
-    width: wp(12.8),
-    height: hp(6),
+    width: 50,
+    height: 50,
   },
   astrology_icons: {
-    width: wp(17),
-    height: hp(8),
+    width: 60,
+    height: 60,
   },
   meditation_icons: {
-    width: wp(16),
-    height: hp(5.5),
+    width:60,
+    height: 43,
   },
   spiritual_icons: {
-    width: wp(16),
-    height: hp(7.3),
+    width: 55,
+    height: 55,
   },
   icon_container: {
     width: wp(22),
@@ -193,6 +196,9 @@ const styles = StyleSheet.create({
     fontSize: 14,
     fontFamily: "regular",
     color: COLORS.dark_gray,
+    flex: 1,
+    flexWrap: "wrap",
+    textAlign:'center'
   },
   header_txt_container: {
     display: "flex",

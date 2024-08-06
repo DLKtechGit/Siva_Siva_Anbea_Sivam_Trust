@@ -1,4 +1,11 @@
-import { StyleSheet, Text, View, Pressable, TextInput, TouchableOpacity } from "react-native";
+import {
+  StyleSheet,
+  Text,
+  View,
+  Pressable,
+  TextInput,
+  TouchableOpacity,
+} from "react-native";
 import React from "react";
 import { COLORS } from "../../components/constants";
 import Icon from "react-native-vector-icons/AntDesign";
@@ -9,12 +16,7 @@ import {
 } from "react-native-responsive-screen";
 import { ScrollView } from "react-native";
 import { CustomFonts } from "../../components/CustomFonts";
-import DOBpicker from "../../components/DOBpicker";
 import GenderToggle from "../../components/GenderToggle";
-import FileUpload from "../../components/FileUpload";
-import Signature from "../../components/Signature";
-import DatePicker from "../../components/DatePicker";
-import Payment2 from "../../components/Payment2";
 
 const OtherServiceBooking = () => {
   const navigation = useNavigation();
@@ -36,8 +38,18 @@ const OtherServiceBooking = () => {
       {/* main input container */}
       <ScrollView showsVerticalScrollIndicator={false}>
         <View style={styles.main_input_container}>
-          {/* header text */}
-          <Text style={styles.header_txt}>Appointment Request Form</Text>
+          {/* question history */}
+          <View style={styles.history_btn_container}>
+            {/* header text */}
+            <Text style={styles.header_txt}>Questions Request Form</Text>
+            <TouchableOpacity
+              style={styles.history_btn}
+              onPress={() => navigation.navigate("QuestionHistory")}
+            >
+              <Text style={styles.history_btn_txt}>Asked Questions</Text>
+            </TouchableOpacity>
+          </View>
+
           {/* name field */}
           <View style={styles.input_container}>
             <Text style={styles.label}>
@@ -96,7 +108,7 @@ const OtherServiceBooking = () => {
           {/* Reason */}
           <View style={styles.input_container}>
             <Text style={styles.label}>
-             Ask your question
+              Ask your question
               <Text style={{ color: "red" }}>*</Text>
             </Text>
             <TextInput style={styles.reason_text_input} multiline={true} />
@@ -104,9 +116,7 @@ const OtherServiceBooking = () => {
 
           {/* Submit button */}
           <TouchableOpacity style={styles.btn_container}>
-            <Text style={styles.btn_txt}>
-              Submit
-            </Text>
+            <Text style={styles.btn_txt}>Submit</Text>
           </TouchableOpacity>
         </View>
       </ScrollView>
@@ -190,16 +200,31 @@ const styles = StyleSheet.create({
     fontFamily: "medium-bold",
     color: COLORS.dark_gray,
   },
-  btn_container:{
-    backgroundColor:COLORS.primary,
-    padding:10,
-    marginBottom:20,
-    borderRadius:7
+  btn_container: {
+    backgroundColor: COLORS.primary,
+    padding: 10,
+    marginBottom: 20,
+    borderRadius: 7,
   },
-  btn_txt:{
-    fontSize:16,
-    textAlign:'center',
-    fontFamily:'semi-bold',
-    color:COLORS.white
-  }
+  btn_txt: {
+    fontSize: 16,
+    textAlign: "center",
+    fontFamily: "semi-bold",
+    color: COLORS.white,
+  },
+  history_btn_container: {
+    display: "flex",
+    flexDirection: "row",
+    alignItems: "center",
+    justifyContent: "space-between",
+  },
+  history_btn: {
+    backgroundColor: COLORS.primary,
+    padding: 5,
+    borderRadius: 5,
+  },
+  history_btn_txt: {
+    color: COLORS.white,
+    fontFamily: "regular",
+  },
 });

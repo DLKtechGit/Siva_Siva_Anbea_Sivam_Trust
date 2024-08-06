@@ -28,6 +28,7 @@ import MeditationScreen from "./src/Screens/ServicesScreens/MeditationScreen";
 import OtherServiceBooking from "./src/Screens/BookingForms/OtherServiceBooking";
 import TermsAndPolicy from "./src/Screens/TermsAndPolicy";
 import AstrologyForm from "./src/Screens/BookingForms/AstrologyForm";
+import QuestionHistoryScreen from "./src/Screens/QuestionHistoryScreen";
 
 const stack = createStackNavigator();
 const drawer = createDrawerNavigator();
@@ -48,8 +49,8 @@ const AppStack = () => {
         <stack.Screen name="Meditation" component={MeditationScreen} />
         <stack.Screen name="Booking" component={DrBookingForm} />
         <stack.Screen name="OtherBooking" component={OthersBookingForm} />
-        <stack.Screen name="OtherServiceBooking"component={OtherServiceBooking}
-        />
+        <stack.Screen name="OtherServiceBooking" component={OtherServiceBooking} />
+        <stack.Screen name="QuestionHistory" component={QuestionHistoryScreen} />
         <stack.Screen name="Astrologyform" component={AstrologyForm} />
         <stack.Screen name="Change_password" component={ChangePasswordScreen} />
         <stack.Screen name="T&C" component={TermsAndPolicy} />
