@@ -24,6 +24,7 @@ const FileUpload = () => {
         "application/vnd.openxmlformats-officedocument.wordprocessingml.document",
         "image/*",
       ],
+      multiple:true
     });
     console.log(result);
     setfile(result);

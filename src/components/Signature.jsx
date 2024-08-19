@@ -6,6 +6,7 @@ import {
   Alert,
   TouchableOpacity,
   Modal,
+  Image,
 } from "react-native";
 import React, { useRef, useState } from "react";
 import SignatureView from "react-native-signature-canvas";
@@ -18,6 +19,7 @@ import { CustomFonts } from "./CustomFonts";
 
 const Signature = () => {
   const [modalvisible, setmodalvisible] = useState(false);
+  const [sign, setsign] = useState(null);
   const ref = useRef();
 
   const fontsloaded = CustomFonts();
@@ -25,20 +27,28 @@ const Signature = () => {
     return null;
   }
 
-  const handleSignature = (signature) => {
-    // console.log(signature);
-    Alert.alert("Signature captured!", "Your signature has been saved.");
-  };
+  // const handleSignature = (sign) => {
+  //   Alert.alert("Signature captured!", "Your signature has been saved.");
+  //   console.log(sign);
+  //   setsign(sign);
+  // };
 
   const handleClear = () => {
     ref.current.clearSignature();
+    console.log("empty");
+
     // setmodalvisible(false)
   };
+
+  const handleempty = ()=>{
+    console.log('no sign')
+  }
 
   const handleConfirm = () => {
     ref.current.readSignature();
     Alert.alert("Signature captured!", "Your signature has been save.");
     setmodalvisible(false);
+   
   };
 
   // const handlesign = ()=>{
@@ -62,10 +72,12 @@ const Signature = () => {
         {/* main container */}
         <View style={styles.main_container}>
           <View style={styles.container}>
+            
             <SignatureView
               ref={ref}
-              onOK={handleSignature}
-              onEmpty={() => Alert.alert("Empty", "Please provide a signature")}
+              // onOK={handleSignature}
+              onOK={handleConfirm}
+              onEmpty={handleempty}
               descriptionText="Sign"
               clearText="Clear"
               confirmText="Save"

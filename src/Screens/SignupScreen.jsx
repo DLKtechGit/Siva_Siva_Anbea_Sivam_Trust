@@ -21,6 +21,8 @@ import { CustomFonts } from "../components/CustomFonts";
 
 const SignupScreen = ({ navigation }) => {
   const [showpassword, setshowpassword] = React.useState(false);
+  const [confirmpassword, setconfirmpassword] = React.useState(false);
+
 
   const loadedfonts = CustomFonts();
   if (!loadedfonts) {
@@ -73,6 +75,20 @@ const SignupScreen = ({ navigation }) => {
                 size={20}
                 color={COLORS.dark_gray}
                 onPress={() => setshowpassword(!showpassword)}
+              />
+            </View>
+            {/* confirm password */}
+            <View style={styles.input_field}>
+              <TextInput
+                placeholder="Confirm Password"
+                style={styles.placeholderstyle}
+                secureTextEntry={!confirmpassword}
+              />
+              <Icon2
+                name={showpassword ? "eye" : "eye-off"}
+                size={20}
+                color={COLORS.dark_gray}
+                onPress={() => setconfirmpassword(!confirmpassword)}
               />
             </View>
           </View>
@@ -131,7 +147,7 @@ const styles = StyleSheet.create({
     display: "flex",
     alignItems: "center",
     justifyContent: "center",
-    paddingVertical: 20,
+    paddingVertical: 10,
   },
   placeholderstyle: {
     fontSize: 16,

@@ -25,7 +25,7 @@ const OpenScreen = ({ navigation }) => {
     >
       {/* second main section */}
       <View style={styles.img_container}>
-        <Image source={require("../Assets/dr2.png")} style={styles.img} />
+        <Image source={require("../Assets/open_img.png")} style={styles.img} />
       </View>
       {/* second section */}
       <View style={styles.second_section}>

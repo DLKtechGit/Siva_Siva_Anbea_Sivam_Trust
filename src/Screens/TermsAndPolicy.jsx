@@ -2,7 +2,7 @@ import {
   StyleSheet,
   Text,
   View,
-  SafeAreaView,
+  // SafeAreaView,
   ScrollView,
   Pressable,
 } from "react-native";
@@ -12,6 +12,7 @@ import { COLORS } from "../components/constants";
 import { CustomFonts } from "../components/CustomFonts";
 import Dot from "react-native-vector-icons/Entypo";
 import Icon from "react-native-vector-icons/AntDesign";
+import { SafeAreaView } from "react-native-safe-area-context";
 
 const TermsAndPolicy = ({ navigation }) => {
   const loadedfonts = CustomFonts();

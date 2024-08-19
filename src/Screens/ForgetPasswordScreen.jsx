@@ -2,7 +2,6 @@ import {
   StyleSheet,
   Text,
   View,
-  SafeAreaView,
   Pressable,
   TextInput,
   TouchableOpacity,
@@ -17,6 +16,7 @@ import {
   heightPercentageToDP as hp,
 } from "react-native-responsive-screen";
 import { CustomFonts } from "../components/CustomFonts";
+import { SafeAreaView } from "react-native-safe-area-context";
 
 const ForgetPasswordScreen = ({ navigation }) => {
   const loadedfonts = CustomFonts();

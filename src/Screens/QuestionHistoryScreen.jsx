@@ -2,7 +2,6 @@ import {
   StyleSheet,
   Text,
   View,
-  SafeAreaView,
   Pressable,
   ScrollView,
 } from "react-native";
@@ -15,6 +14,8 @@ import {
   heightPercentageToDP as hp,
 } from "react-native-responsive-screen";
 import { CustomFonts } from "../components/CustomFonts";
+import { SafeAreaView } from "react-native-safe-area-context";
+
 
 const QuestionHistoryScreen = ({ navigation }) => {
   const fontsloaded = CustomFonts();
@@ -39,6 +40,10 @@ const QuestionHistoryScreen = ({ navigation }) => {
         <View style={styles.main_sub_container}>
           {/* sub container */}
           <View style={styles.sub_container}>
+            {/* date */}
+            <Text style={styles.date_txt}>
+              Date: <Text>1/08/2024</Text>
+            </Text>
             {/* question */}
             <View style={styles.question_container}>
               <Text style={styles.question_txt}>
@@ -54,6 +59,10 @@ const QuestionHistoryScreen = ({ navigation }) => {
           </View>
           
           <View style={styles.sub_container}>
+             {/* date */}
+             <Text style={styles.date_txt}>
+              Date: <Text>3/08/2024</Text>
+            </Text>
             {/* question */}
             <View style={styles.question_container}>
               <Text style={styles.question_txt}>
@@ -69,6 +78,10 @@ const QuestionHistoryScreen = ({ navigation }) => {
           </View>
 
           <View style={styles.sub_container}>
+             {/* date */}
+             <Text style={styles.date_txt}>
+              Date: <Text>5/08/2024</Text>
+            </Text>
             {/* question */}
             <View style={styles.question_container}>
               <Text style={styles.question_txt}>
@@ -129,4 +142,8 @@ const styles = StyleSheet.create({
     fontSize: 16,
     fontFamily: "medium-bold",
   },
+  date_txt:{
+    fontSize:13,
+    fontFamily:'regular'
+  }
 });

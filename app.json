@@ -2,7 +2,12 @@
   "expo": {
     "name": "Doctor_Appointment_App",
     "slug": "Doctor_Appointment_App",
-    "version": "1.0.0"
-  },
-  "name": "Doctor_Appointment_App"
+    "version": "1.0.0",
+    "extra": {
+      "eas": {
+        "projectId": "0f29f193-8eaf-408d-8be2-dd4e0c8a835e"
+      }
+    }
+  }
+  
 }

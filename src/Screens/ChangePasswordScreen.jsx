@@ -2,7 +2,6 @@ import {
   StyleSheet,
   Text,
   View,
-  SafeAreaView,
   Pressable,
   TextInput,
   TouchableOpacity,
@@ -17,6 +16,7 @@ import {
   widthPercentageToDP as wp,
   heightPercentageToDP as hp,
 } from "react-native-responsive-screen";
+import { SafeAreaView } from "react-native-safe-area-context";
 
 const ChangePasswordScreen = ({ navigation }) => {
   const [showpassword, setshowpassword] = React.useState(false);

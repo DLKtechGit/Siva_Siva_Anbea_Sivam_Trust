@@ -29,6 +29,9 @@ import OtherServiceBooking from "./src/Screens/BookingForms/OtherServiceBooking"
 import TermsAndPolicy from "./src/Screens/TermsAndPolicy";
 import AstrologyForm from "./src/Screens/BookingForms/AstrologyForm";
 import QuestionHistoryScreen from "./src/Screens/QuestionHistoryScreen";
+import { enableScreens } from "react-native-screens";
+
+enableScreens()
 
 const stack = createStackNavigator();
 const drawer = createDrawerNavigator();
