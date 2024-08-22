@@ -20,8 +20,13 @@ import Icon2 from "react-native-vector-icons/FontAwesome6";
 import Icon3 from "react-native-vector-icons/FontAwesome5";
 import Icon4 from "react-native-vector-icons/Entypo";
 import Icon5 from "react-native-vector-icons/AntDesign";
+import { removeuser } from "../utils/auth";
+import { useNavigation } from "@react-navigation/native";
+import { useAuth } from "../context/authcontext";
 
-const ProfileScreen = ({ navigation }) => {
+const ProfileScreen = () => {
+  const { handlelogout } = useAuth();
+  const navigation = useNavigation();
   const [modalVisible, setModalVisible] = useState(false);
   const [userDetails, setUserDetails] = useState({
     name: "Tommy Shelby",
@@ -58,18 +63,6 @@ const ProfileScreen = ({ navigation }) => {
     if (!result.cancelled) {
       setProfileImage({ uri: result.uri });
     }
-  };
-
-  const logout = () => {
-    Alert.alert(
-      "Are you sure",
-      "You want to Logout",
-      [
-        { text: "YES", onPress: () => alert("Successfully logged out") },
-        { text: "NO", onPress: () => navigation.navigate("Home") },
-      ],
-      { cancelable: true }
-    );
   };
 
   const fontsloaded = CustomFonts();
@@ -171,7 +164,7 @@ const ProfileScreen = ({ navigation }) => {
             </TouchableOpacity>
             {/* log out */}
             <TouchableOpacity
-              onPress={logout}
+              onPress={handlelogout}
               style={{
                 alignItems: "center",
                 padding: 10,
@@ -197,7 +190,7 @@ const ProfileScreen = ({ navigation }) => {
             </TouchableOpacity>
           </View>
         </View>
-        {/* modal */}
+        {/*edit profile modal */}
         <Modal
           animationType="slide"
           transparent={true}

@@ -1,0 +1,1 @@
+export const BASE_URL = 'https://dlktechnologies.co.in/siva_siva_trust/public/api'

@@ -9,5 +9,6 @@ export const COLORS = {
   header_color: "#EBEBEB",
   very_light_gray: "#DFE3ED",
   label_bg: "#f7f7f7",
-  green:'#4c956c'
+  green:'#4c956c',
+  err_clr:'#dd0426'
 };

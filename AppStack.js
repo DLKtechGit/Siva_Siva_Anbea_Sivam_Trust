@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import { createStackNavigator } from "@react-navigation/stack";
 import { NavigationContainer } from "@react-navigation/native";
 import OpenScreen from "./src/Screens/OpenScreen";
@@ -30,39 +30,62 @@ import TermsAndPolicy from "./src/Screens/TermsAndPolicy";
 import AstrologyForm from "./src/Screens/BookingForms/AstrologyForm";
 import QuestionHistoryScreen from "./src/Screens/QuestionHistoryScreen";
 import { enableScreens } from "react-native-screens";
+import { getToken, removeuser } from "./src/utils/auth";
+import { AuthProvider, useAuth } from "./src/context/authcontext";
 
-enableScreens()
+enableScreens();
 
 const stack = createStackNavigator();
 const drawer = createDrawerNavigator();
 
-const AppStack = () => {
+const AppStack = ({ navigation }) => {
+  const { authorized } = useAuth();
+  const loadedfonts = CustomFonts();
+
+  if (!loadedfonts) {
+    return null;
+  }
+
+  if (authorized === null) {
+    return <OpenScreen />;
+  }
+
   return (
-    <NavigationContainer>
-      <stack.Navigator screenOptions={{ headerShown: false }}>
-        <stack.Screen name="Front" component={OpenScreen} />
-        <stack.Screen name="Login" component={LoginScreen} />
-        <stack.Screen name="Sign-up" component={SignupScreen} />
-        <stack.Screen name="Forget" component={ForgetPasswordScreen} />
+    <stack.Navigator
+      screenOptions={{ headerShown: false }}
+      initialRouteName="Front"
+    >
+      {authorized ? (
         <stack.Screen name="MainScreen" component={FormStackNavigation} />
-        <stack.Screen name="Doctor" component={DoctorsScreen} />
-        <stack.Screen name="Yoga" component={YogaScreen} />
-        <stack.Screen name="Spiritual" component={SpiritualScreen} />
-        <stack.Screen name="Astrology" component={AstrologyScreen} />
-        <stack.Screen name="Meditation" component={MeditationScreen} />
-        <stack.Screen name="Booking" component={DrBookingForm} />
-        <stack.Screen name="OtherBooking" component={OthersBookingForm} />
-        <stack.Screen name="OtherServiceBooking" component={OtherServiceBooking} />
-        <stack.Screen name="QuestionHistory" component={QuestionHistoryScreen} />
-        <stack.Screen name="Astrologyform" component={AstrologyForm} />
-        <stack.Screen name="Change_password" component={ChangePasswordScreen} />
-        <stack.Screen name="T&C" component={TermsAndPolicy} />
-      </stack.Navigator>
-    </NavigationContainer>
+      ) : (
+        <>
+          <stack.Screen name="Login" component={LoginScreen} />
+          <stack.Screen name="Sign-up" component={SignupScreen} />
+          <stack.Screen name="Forget" component={ForgetPasswordScreen} />
+          <stack.Screen name="Front" component={OpenScreen} />
+        </>
+      )}
+      <stack.Screen name="Doctor" component={DoctorsScreen} />
+      <stack.Screen name="Yoga" component={YogaScreen} />
+      <stack.Screen name="Spiritual" component={SpiritualScreen} />
+      <stack.Screen name="Astrology" component={AstrologyScreen} />
+      <stack.Screen name="Meditation" component={MeditationScreen} />
+      <stack.Screen name="Booking" component={DrBookingForm} />
+      <stack.Screen name="OtherBooking" component={OthersBookingForm} />
+      <stack.Screen
+        name="OtherServiceBooking"
+        component={OtherServiceBooking}
+      />
+      <stack.Screen name="QuestionHistory" component={QuestionHistoryScreen} />
+      <stack.Screen name="Astrologyform" component={AstrologyForm} />
+      <stack.Screen name="Change_password" component={ChangePasswordScreen} />
+      <stack.Screen name="T&C" component={TermsAndPolicy} />
+    </stack.Navigator>
   );
 };
 
 function FormStackNavigation() {
+  const { handlelogout } = useAuth();
   return (
     <drawer.Navigator
       drawerContent={(props) => <CustomDrawer {...props} />}
