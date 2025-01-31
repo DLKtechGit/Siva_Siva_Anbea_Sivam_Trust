@@ -4,6 +4,7 @@ import {
   Text,
   View,
   RefreshControl,
+  Dimensions
 } from "react-native";
 import React, { useState } from "react";
 import { COLORS } from "../components/constants";
@@ -12,9 +13,11 @@ import CarouselComp from "../components/CarouselComp";
 import ServiceSelection from "../components/ServiceSelection";
 import StepsComp from "../components/StepsComp";
 import { CustomFonts } from "../components/CustomFonts";
-import { useVideoPlayer, VideoView } from "expo-video";
+// import { useVideoPlayer, VideoView } from "expo-video";
 const videoSource = require("../Assets/bgvid6.mp4");
+import { Video } from "expo-av";
 
+const { width, height } = Dimensions.get("window");
 const HomeScreen = () => {
   const fontsloaded = CustomFonts();
   const [refreshing, setRefreshing] = useState(false);
@@ -26,22 +29,32 @@ const HomeScreen = () => {
     }, 2000);
   };
 
-  const player = useVideoPlayer(videoSource, (player) => {
-    player.loop = true;
-    player.staysActiveInBackground = true;
-    player.play();
-  });
+  // const player = useVideoPlayer(videoSource, (player) => {
+  //   player.loop = true;
+  //   player.staysActiveInBackground = true;
+  //   player.play();
+  // });
 
   if (!fontsloaded) {
     return null;
   }
   return (
     <View style={styles.main_container}>
-      <VideoView
-        player={player}
-        allowsFullscreen
-        allowsPictureInPicture
-        startsPictureInPictureAutomatically
+      {/* <VideoView */}
+        {/* // player={player}
+        // allowsFullscreen
+        // allowsPictureInPicture
+        // startsPictureInPictureAutomatically
+        // isLooping
+        // style={styles.backgroundVideo} */}
+      {/* /> */}
+      <Video
+        source={videoSource}
+        rate={1.0}
+        // volume={1.0}
+        isMuted={true}
+        resizeMode="cover"
+        shouldPlay
         isLooping
         style={styles.backgroundVideo}
       />
@@ -101,16 +114,23 @@ const styles = StyleSheet.create({
     fontSize: 16,
     fontFamily: "regular",
   },
+  // backgroundVideo: {
+  //   display: "flex",
+  //   position: "absolute",
+  //   top: -200,
+  //   bottom: 0,
+  //   left: -500,
+  //   width: 1400,
+  //   height: 1200,
+  //   resizeMode: "cover",
+  //   alignItems: "center",
+  //   justifyContent: "center",
+  // },
   backgroundVideo: {
-    display: "flex",
     position: "absolute",
-    top: -200,
-    bottom: 0,
-    left: -500,
-    width: 1400,
-    height: 1200,
-    resizeMode: "cover",
-    alignItems: "center",
-    justifyContent: "center",
+    top: 0,
+    left: 0,
+    width: width,
+    height: height,
   },
 });
