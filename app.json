@@ -2,13 +2,14 @@
   "expo": {
     "name": "Doctor_Appointment",
     "slug": "Doctor_Appointment",
+    "platforms": ["ios", "android"],
     "version": "1.0.0",
     "orientation": "portrait",
-    "icon": "./assets/icon.png",
+    "icon": "./assets/siva_logo.png",
     "userInterfaceStyle": "light",
     "newArchEnabled": true,
     "splash": {
-      "image": "./assets/splash-icon.png",
+      "image": "./assets/siva_logo.png",
       "resizeMode": "contain",
       "backgroundColor": "#ffffff"
     },
@@ -16,13 +17,21 @@
       "supportsTablet": true
     },
     "android": {
+      "userInterfaceStyle": "light",
+
       "adaptiveIcon": {
-        "foregroundImage": "./assets/adaptive-icon.png",
+        "foregroundImage": "./assets/siva_logo.png",
         "backgroundColor": "#ffffff"
+      },
+      "package": "com.mahaboob123.Doctor_Appointment",
+      "versionCode": 2,
+      "favicon": "./assets/favicon.png"
+    },
+    "extra": {
+      "eas": {
+        "projectId": "bcdab2ce-86d3-42a9-9bd9-d99946306e2d"
       }
     },
-    "web": {
-      "favicon": "./assets/favicon.png"
-    }
+    "owner": "mahaboob123"
   }
 }
